@@ -1,25 +1,30 @@
 # ACME Webhooks Samples
 
-This project is a sample project, demonstrating cubu Webhooks implementation.
-It provide sample implementations of different webhooks.
+Copyright © 2022 Callflow Software Ltd.
 
-cubu webhooks are essentially
-This project is a standard dotNet Core Web API project, using the `WebhooksRouterMiddleware` from the `Cubu.Webhooks` package for routing requests.
+A webhook (also called a web callback or HTTP push API) is a way for an app to provide other applications with real-time information. A webhook delivers data to other applications as it happens, meaning you get data immediately.
 
-To get the latest `Cubu.Webhooks` package, type:
+In cubu, webhooks notify external programs of various events and, in some cases, allow the external program to return information that will affect the standard cubu’s behavior.
 
-```sh
-$ dotnet add package Cubu.Webhooks
-```
+This project is a standard dotNet Core Web API project, demonstrating the implementation of a "webhooks service".
+The project is using the `WebhooksRouterMiddleware` from the `Cubu.Webhooks.Router` package for routing requests.
+
+To learn more about cubu webhooks, see [Webhooks](https://qnomy.atlassian.net/wiki/spaces/CKB/pages/1840840730/Webhooks) in cubu Knowledge Base.
 
 ## Setup
+
+To add the `Cubu.Webhooks` package to your project, type:
+
+```sh
+$ dotnet add package Cubu.Webhooks.Router --version 1.0.0-beta2
+```
 
 In the `Startup.cs`, the cubu Router middleware is registered using `app.UseWebhooksRouter`.
 The file provide a few sample for different authentication options (basic, certificate, token, and none).
 
 For more information, see `Cubu.Router' documentation.
 
-# Dev tips
+## Dev tips
 
 To test the webhooks service locally, use [ngrok](https://ngrok.com/) to tunnel webhook request from the internet to your local machine.
 (You will need to set up an ngrok account).
